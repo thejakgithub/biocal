@@ -1,0 +1,18 @@
+@media screen and (max-width: 480px) {
+  .wrapper-table {
+    height: 32rem;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+}
+
+@media screen and (max-width: 1279px) and (min-width: 769px) {
+ 
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper-table {
+    height: 30rem;
+  }
+}
