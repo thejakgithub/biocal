@@ -5,7 +5,7 @@ import Axios from "axios";
 import dayjs from "dayjs";
 import "dayjs/locale/th";
 import base_url from "../config/base_url";
-import '../styles/styles.pages/more.css'
+import '../styles/styles.pages/userproject.css'
 
 export default function UserProject() {
   let { pjID } = useParams();
@@ -63,7 +63,7 @@ export default function UserProject() {
 
   return (
     <>
-      <div className="wrapper-table">
+      <div className="wrapper-userproject">
         <Table
           title={`รายชื่อสมาชิก ${projectName}`}
           columns={columns}

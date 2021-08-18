@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Agency() {
     return (
-        <div className="container my-4 d-flex justify-content-center">
+        <div className="container py-4 d-flex justify-content-center">
             <div className="card">
                 <div className="card-header bg-success fs-5 text-center text-white">
                     เครือข่ายและหน่วยงานที่เกี่ยวข้อง

@@ -1,13 +1,13 @@
 import React from 'react'
-import Image from 'react-bootstrap/Image'
+import '../styles/styles.pages/about.css'
+
 export default function Origin() {
     return (
-        <div className="d-flex justify-content-center">
-            <Image src="/img/origin.png" 
+        <div className="text-center">
+            <img className="img-origin" src="/img/origin.png" 
                 alt="origin"
-                width={850}
               >
-            </Image>
+            </img>
         </div>
     )
 }

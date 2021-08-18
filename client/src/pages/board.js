@@ -1,14 +1,10 @@
-import React from 'react'
-import Image from 'react-bootstrap/Image'
+import React from "react";
+import "../styles/styles.pages/about.css";
 
 export default function Board() {
-    return (
-        <div className="d-flex justify-content-center">
-            <Image src="/img/board.png"
-                alt="board"
-                width={850}
-             >
-            </Image>
-        </div>
-    )
+  return (
+    <div className="text-center">
+      <img className="img-about" src="/img/board.png" alt="board" />
+    </div>
+  );
 }
