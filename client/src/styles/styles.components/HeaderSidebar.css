@@ -4,3 +4,15 @@
     align-items: center;
     border-bottom: solid white;
 }
+
+@media (max-width: 576px) {
+    .header-sidebar{
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: solid white;
+    }
+    
+  }
+  

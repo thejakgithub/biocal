@@ -129,14 +129,12 @@ export default function PaymentManage() {
   const data = useMemo(() => [...paymentList], [paymentList]);
 
   return (
-    <div className="d-flex flex-column w-100 ">
-      <Table
-        columns={columns}
-        data={data}
-        title="ตรวจสอบชำระเงินค่าลงทะเบียน"
-        add={false}
-        size={5}
-      />
-    </div>
+    <Table
+      columns={columns}
+      data={data}
+      title="ตรวจสอบชำระเงินค่าลงทะเบียน"
+      add={false}
+      size={5}
+    />
   );
 }

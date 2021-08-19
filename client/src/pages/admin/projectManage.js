@@ -154,7 +154,7 @@ export default function ProjectManage() {
   const data = useMemo(() => [...projectList], [projectList]);
 
   return (
-    <div className="d-flex flex-column w-100 ">
+    <>
       <Table
         columns={columns}
         data={data}
@@ -163,6 +163,6 @@ export default function ProjectManage() {
         add={true}
         size={5}
       />
-    </div>
+    </>
   );
 }

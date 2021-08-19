@@ -68,7 +68,7 @@ export default function Table({
           </div>
         </header>
       )}
-      <div className="container table-responsive  mb-4">
+      <div className="table-responsive  mb-4">
         <table
           {...getTableProps()}
           className="table table-striped table-bordered w-100 text-center table-hover"

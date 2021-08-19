@@ -95,7 +95,7 @@ export default function AddProject() {
 
   return (
     <>
-      <div className="flex-column  w-100">
+    
         <header className="bg-success text-white header-sidebar justify-content-between ">
           <h4 className="mx-3">เพิ่มโครงการ/กิจกรรม</h4>
         </header>
@@ -237,7 +237,7 @@ export default function AddProject() {
             </div>
           </div>
         </div>
-      </div>
+     
     </>
   );
 }

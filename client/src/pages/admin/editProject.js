@@ -74,7 +74,7 @@ export default function EditProject() {
         projectSchedule: res.data[0].pjSchedule,
       });
     });
-  }, [id,setValue]);
+  }, [id, setValue]);
 
   const onTextClick = () => {
     setSuccess(false);
@@ -108,12 +108,12 @@ export default function EditProject() {
       .then((res) => {
         setSuccess(true);
         setInput({
-            projectName: data.projectName,
-            projectStart: data.projectStart,
-            projectEnd: data.projectEnd,
-            projectPlace: data.projectPlace,
-            projectFee: data.projectFee,
-        })
+          projectName: data.projectName,
+          projectStart: data.projectStart,
+          projectEnd: data.projectEnd,
+          projectPlace: data.projectPlace,
+          projectFee: data.projectFee,
+        });
         setFile({
           projectDes: data.projectDes[0].name,
           projectReply: data.projectReply[0].name,
@@ -129,167 +129,165 @@ export default function EditProject() {
 
   return (
     <>
-      <div className="flex-column  w-100">
-        <header className="bg-success text-white header-sidebar justify-content-between ">
-          <h4 className="mx-3">แก้ไขโครงการ/กิจกรรม</h4>
-        </header>
-        <div className="container d-flex justify-content-center mt-4">
-          <div className="card " style={{ width: 700 }}>
-            <div className="card-header bg-success fs-5  text-white">
-              แก้ไขโครงการ/กิจกรรม
-            </div>
-            <div className="card-body">
-              <form onSubmit={handleSubmit(updateProject)}>
-                {success && (
-                  <Alert variant="success">
-                    แก้ไขโครงการ/กิจกรรม เรียบร้อยแล้ว
-                  </Alert>
-                )}
-                {(errors.projectReply ||
-                  errors.projectDes ||
-                  errors.projectSchedule) && (
-                  <Alert variant="danger">รูปแบบไฟล์ไม่ถูกต้อง !</Alert>
-                )}
-                <div className="row">
-                  <div className="col-6">
-                    <div className="mb-3">
-                      <label htmlFor="topic_news" className="form-label">
-                        โครงการ/กิจกรรม
-                      </label>
-                      <textarea
-                        type="text"
-                        className="form-control"
-                        name="projectName"
-                        placeholder="ชื่อโครงการ/กิจกรรม"
-                        defaultValue={projectName}
-                        required
-                        onClick={onTextClick}
-                        {...register("projectName")}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="date" className="form-label">
-                        วันที่อบรม
-                      </label>
-                      <input
-                        type="date"
-                        className="form-control"
-                        name="projectStart"
-                        defaultValue={projectStart}
-                        required
-                        {...register("projectStart")}
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label htmlFor="date" className="form-label">
-                        ค่าลงทะเบียน
-                      </label>
-                      <input
-                        type="number"
-                        className="form-control"
-                        min="0"
-                        name="projectFee"
-                        placeholder="ค่าลงทะเบียนต่อ 1 ท่าน"
-                        defaultvalue={projectFee}
-                        required
-                        {...register("projectFee")}
-                      />
-                      <div className="form-text">
-                        ค่าลงทะเบียนต่อ 1 ท่าน ( บาท )
-                      </div>
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">
-                        <Link
-                          to={`/file/projects/${projectSchedule}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {projectSchedule}{" "}
-                        </Link>
-                      </label>
-                      <input
-                        {...register("projectSchedule")}
-                        type="file"
-                        className="form-control"
-                        name="projectSchedule"
-                      />
-                      <div className="form-text">กำหนดการ ( .pdf )</div>
-                    </div>
-                    <button
-                      type="submit"
-                      className="btn btn-success mt-1"
-                      style={{ width: 90 }}
-                    >
-                      แก้ไข
-                    </button>
+      <header className="bg-success text-white header-sidebar justify-content-between ">
+        <h4 className="mx-3">แก้ไขโครงการ/กิจกรรม</h4>
+      </header>
+      <div className="container d-flex justify-content-center mt-4">
+        <div className="card " style={{ width: 700 }}>
+          <div className="card-header bg-success fs-5  text-white">
+            แก้ไขโครงการ/กิจกรรม
+          </div>
+          <div className="card-body">
+            <form onSubmit={handleSubmit(updateProject)}>
+              {success && (
+                <Alert variant="success">
+                  แก้ไขโครงการ/กิจกรรม เรียบร้อยแล้ว
+                </Alert>
+              )}
+              {(errors.projectReply ||
+                errors.projectDes ||
+                errors.projectSchedule) && (
+                <Alert variant="danger">รูปแบบไฟล์ไม่ถูกต้อง !</Alert>
+              )}
+              <div className="row">
+                <div className="col-6">
+                  <div className="mb-3">
+                    <label htmlFor="topic_news" className="form-label">
+                      โครงการ/กิจกรรม
+                    </label>
+                    <textarea
+                      type="text"
+                      className="form-control"
+                      name="projectName"
+                      placeholder="ชื่อโครงการ/กิจกรรม"
+                      defaultValue={projectName}
+                      required
+                      onClick={onTextClick}
+                      {...register("projectName")}
+                    />
                   </div>
-                  <div className="col-6">
-                    <div className="mb-3">
-                      <label htmlFor="topic_news" className="form-label">
-                        สถานที่จัด
-                      </label>
-                      <textarea
-                        type="text"
-                        className="form-control"
-                        name="projectPlace"
-                        placeholder="ที่อยู่สถานที่จัด"
-                        defaultValue={projectPlace}
-                        required
-                        {...register("projectPlace")}
-                      />
+                  <div className="mb-3">
+                    <label htmlFor="date" className="form-label">
+                      วันที่อบรม
+                    </label>
+                    <input
+                      type="date"
+                      className="form-control"
+                      name="projectStart"
+                      defaultValue={projectStart}
+                      required
+                      {...register("projectStart")}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="date" className="form-label">
+                      ค่าลงทะเบียน
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      min="0"
+                      name="projectFee"
+                      placeholder="ค่าลงทะเบียนต่อ 1 ท่าน"
+                      defaultvalue={projectFee}
+                      required
+                      {...register("projectFee")}
+                    />
+                    <div className="form-text">
+                      ค่าลงทะเบียนต่อ 1 ท่าน ( บาท )
                     </div>
-                    <div className="mb-3">
-                      <label htmlFor="date" className="form-label">
-                        วันที่สิ้นสุด
-                      </label>
-                      <input
-                        type="date"
-                        className="form-control"
-                        name="projectEnd"
-                        defaultValue={projectEnd}
-                        {...register("projectEnd")}
-                        required
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">
-                        <Link to={`/file/projects/${projectReply}`}>
-                          {projectReply}
-                        </Link>
-                      </label>
-                      <input
-                        {...register("projectReply")}
-                        type="file"
-                        className="form-control"
-                        name="projectReply"
-                      />
-                      <div className="form-text">แบบตอบรับ ( .docx )</div>
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">
-                        <Link
-                          to={`/file/projects/${projectDes}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {projectDes}
-                        </Link>
-                      </label>
-                      <input
-                        {...register("projectDes")}
-                        type="file"
-                        className="form-control"
-                        name="projectDes"
-                      />
-                      <div className="form-text">
-                        รายละเอียดโครงการ/กิจกรรม ( .pdf )
-                      </div>
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">
+                      <Link
+                        to={`/file/projects/${projectSchedule}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {projectSchedule}{" "}
+                      </Link>
+                    </label>
+                    <input
+                      {...register("projectSchedule")}
+                      type="file"
+                      className="form-control"
+                      name="projectSchedule"
+                    />
+                    <div className="form-text">กำหนดการ ( .pdf )</div>
+                  </div>
+                  <button
+                    type="submit"
+                    className="btn btn-success mt-1"
+                    style={{ width: 90 }}
+                  >
+                    แก้ไข
+                  </button>
+                </div>
+                <div className="col-6">
+                  <div className="mb-3">
+                    <label htmlFor="topic_news" className="form-label">
+                      สถานที่จัด
+                    </label>
+                    <textarea
+                      type="text"
+                      className="form-control"
+                      name="projectPlace"
+                      placeholder="ที่อยู่สถานที่จัด"
+                      defaultValue={projectPlace}
+                      required
+                      {...register("projectPlace")}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="date" className="form-label">
+                      วันที่สิ้นสุด
+                    </label>
+                    <input
+                      type="date"
+                      className="form-control"
+                      name="projectEnd"
+                      defaultValue={projectEnd}
+                      {...register("projectEnd")}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">
+                      <Link to={`/file/projects/${projectReply}`}>
+                        {projectReply}
+                      </Link>
+                    </label>
+                    <input
+                      {...register("projectReply")}
+                      type="file"
+                      className="form-control"
+                      name="projectReply"
+                    />
+                    <div className="form-text">แบบตอบรับ ( .docx )</div>
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">
+                      <Link
+                        to={`/file/projects/${projectDes}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {projectDes}
+                      </Link>
+                    </label>
+                    <input
+                      {...register("projectDes")}
+                      type="file"
+                      className="form-control"
+                      name="projectDes"
+                    />
+                    <div className="form-text">
+                      รายละเอียดโครงการ/กิจกรรม ( .pdf )
                     </div>
                   </div>
                 </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

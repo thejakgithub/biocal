@@ -114,7 +114,7 @@ export default function EditUser() {
     setInputFilter(document.getElementById("inputTel"), function (value) {
       return /^\d*$/.test(value);
     });
-  }, [pjID,userID,setValue]);
+  }, [pjID, userID, setValue]);
 
   useEffect(() => {
     setReceiptName(firstReceiptName);
@@ -164,241 +164,244 @@ export default function EditUser() {
 
   return (
     <>
-      <div className="flex-column  w-100">
-        <header className="bg-success text-white header-sidebar justify-content-between ">
-          <h4 className="mx-3">แก้ไขรายชื่อสมาชิก</h4>
-        </header>
-        <div className="container d-flex justify-content-center my-4">
-          <div className="card" style={{ width: 700 }}>
-            <div className="card-header bg-success fs-5  text-white">
-              แก้ไขรายชื่อสมาชิก
-            </div>
-            <div className="card-body">
-              <form onSubmit={handleSubmit(updateUser)}>
-                {success && (
-                  <div className="alert alert-success">
-                    แก้ไขรายชื่อสมาชิกเรียบร้อยแล้ว
-                  </div>
-                )}
-                <div className="row">
-                  <div className="col-12">
-                    <div className="mb-3 d-flex">
-                      <label className="form-label me-3" htmlFor="prefix">
-                        คำนำหน้า
-                      </label>
-                      <div className="form-check me-3">
-                        <input
-                          {...register("prefix")}
-                          className="form-check-input"
-                          type="radio"
-                          value="นาย"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexRadioDefault1"
-                        >
-                          นาย
-                        </label>
-                      </div>
-                      <div className="form-check me-3">
-                        <input
-                          {...register("prefix")}
-                          className="form-check-input"
-                          type="radio"
-                          value="นางสาว"
-                        />
-                        <label className="form-check-label">นางสาว</label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          {...register("prefix")}
-                          className="form-check-input"
-                          type="radio"
-                          value="นาง"
-                        />
-                        <label className="form-check-label">นาง</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="mb-3">
-                      <label htmlFor="firstName" className="form-label">
-                        ชื่อ
-                      </label>
+      <header className="bg-success text-white header-sidebar justify-content-between ">
+        <h4 className="mx-3">แก้ไขรายชื่อสมาชิก</h4>
+      </header>
+      <div className="container d-flex justify-content-center my-4">
+        <div className="card" style={{ width: 700 }}>
+          <div className="card-header bg-success fs-5  text-white">
+            แก้ไขรายชื่อสมาชิก
+          </div>
+          <div className="card-body">
+            <form onSubmit={handleSubmit(updateUser)}>
+              {success && (
+                <div className="alert alert-success">
+                  แก้ไขรายชื่อสมาชิกเรียบร้อยแล้ว
+                </div>
+              )}
+              <div className="row">
+                <div className="col-12">
+                  <div className="mb-3 d-flex">
+                    <label className="form-label me-3" htmlFor="prefix">
+                      คำนำหน้า
+                    </label>
+                    <div className="form-check me-3">
                       <input
-                        {...register("firstName")}
-                        type="text"
-                        className="form-control"
-                        placeholder="ชื่อ"
-                        required
+                        {...register("prefix")}
+                        className="form-check-input"
+                        type="radio"
+                        value="นาย"
                       />
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="mb-3">
-                      <label htmlFor="firstName" className="form-label">
-                        นามสกุล
+                      <label
+                        className="form-check-label"
+                        htmlFor="flexRadioDefault1"
+                      >
+                        นาย
                       </label>
+                    </div>
+                    <div className="form-check me-3">
                       <input
-                        {...register("lastName")}
-                        type="text"
-                        className="form-control"
-                        placeholder="นามสกุล"
-                        required
+                        {...register("prefix")}
+                        className="form-check-input"
+                        type="radio"
+                        value="นางสาว"
                       />
+                      <label className="form-check-label">นางสาว</label>
                     </div>
-                  </div>
-                  <div className="col-12">
-                    <div className="mb-3">
-                      <label className="form-label">หน่วยงาน</label>
+                    <div className="form-check">
                       <input
-                        {...register("department")}
-                        type="text"
-                        className="form-control"
-                        placeholder="หน่วยงาน"
-                        required
+                        {...register("prefix")}
+                        className="form-check-input"
+                        type="radio"
+                        value="นาง"
                       />
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">Email</label>
-                      <input
-                        {...register("email")}
-                        type="email"
-                        className="form-control"
-                        placeholder="email"
-                        required
-                      />
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">เบอร์โทร</label>
-                      <input
-                        id="inputTel"
-                        type="tel"
-                        className="form-control"
-                        placeholder="เบอร์โทร"
-                        maxLength="10"
-                        pattern="[0]{1}[0-9]{9}"
-                        required
-                        {...register("tel")}
-                      />
-                    </div>
-                    <div className="mb-3 d-flex">
-                      <label className="form-label me-3" htmlFor="prefix">
-                        รับประทานอาหาร
-                      </label>
-                      <div className="form-check me-3">
-                        <input
-                          {...register("mealType")}
-                          className="form-check-input"
-                          type="radio"
-                          value="ปกติ"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="flexRadioDefault1"
-                        >
-                          ปกติ
-                        </label>
-                      </div>
-                      <div className="form-check me-3">
-                        <input
-                          {...register("mealType")}
-                          className="form-check-input"
-                          type="radio"
-                          value="อิสลาม"
-                        />
-                        <label className="form-check-label">อิสลาม</label>
-                      </div>
-                      <div className="form-check">
-                        <input
-                          {...register("mealType")}
-                          className="form-check-input"
-                          type="radio"
-                          value="มังสวิรัติ"
-                        />
-                        <label className="form-check-label">มังสวิรัติ</label>
-                      </div>
-                    </div>
-                    <div className="mb-3">
-                      <label className="form-label">
-                        ที่อยู่ (สำหรับออกใบเสร็จ)
-                      </label>
-                      <textarea
-                        {...register("billAdress")}
-                        type="text"
-                        className="form-control"
-                        placeholder="ที่อยู่ (สำหรับออกใบเสร็จ)"
-                        required
-                      />
-                    </div>
-                    <div className="row">
-                      <div className="col-6">
-                        <div className="mb-3">
-                          <label htmlFor="payDate" className="form-label">
-                            วันที่/เวลา ชำระค่าลงทะเบียน
-                          </label>
-                          <input
-                            {...register("payDate")}
-                            className="form-control"
-                            type="datetime-local"
-                            id="payDate"
-                          />
-                        </div>
-                      </div>
-                      <div className="col-6">
-                        <div className="mb-3">
-                          <label className="form-label">สถานะการชำระเงิน</label>
-                          <select
-                            {...register("payStatus")}
-                            className="form-select"
-                            aria-label="payStatus"
-                          >
-                            <option Value="รอการยืนยัน">รอการยืนยัน</option>
-                            <option value="ชำระแล้ว">ชำระแล้ว</option>
-                            <option value="ไม่ต้องชำระ">ไม่ต้องชำระ</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-12">
-                      <div className="mb-3">
-                        {fileImg && firstReceiptName !== "" && (
-                          <div className="text-center mb-2">
-                            <img className="w-50" src={fileImg} alt="fileImg" height="500" />
-                          </div>
-                        )}
-                        <label htmlFor="slip" className="form-label w-100">
-                          {errors.fileImg ? (
-                            <div className="alert alert-danger ">
-                              {errors.fileImg.message}
-                            </div>
-                          ) : (
-                            receiptName
-                          )}
-                        </label>
-                        {firstReceiptName !== "" && (
-                          <>
-                            <input
-                              {...register("fileImg")}
-                              onChange={handleChange}
-                              type="file"
-                              accept="image/*"
-                              className="form-control"
-                            />
-                            <div className="form-text">
-                              ใบเสร็จชำระค่าลงทะเบียน ( .jpg/.jpeg/.png )
-                            </div>
-                          </>
-                        )}
-                      </div>
-                      <button type="submit" className="btn btn-success">
-                        แก้ไขรายชื่อสมาชิก
-                      </button>
+                      <label className="form-check-label">นาง</label>
                     </div>
                   </div>
                 </div>
-              </form>
-            </div>
+                <div className="col-6">
+                  <div className="mb-3">
+                    <label htmlFor="firstName" className="form-label">
+                      ชื่อ
+                    </label>
+                    <input
+                      {...register("firstName")}
+                      type="text"
+                      className="form-control"
+                      placeholder="ชื่อ"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="mb-3">
+                    <label htmlFor="firstName" className="form-label">
+                      นามสกุล
+                    </label>
+                    <input
+                      {...register("lastName")}
+                      type="text"
+                      className="form-control"
+                      placeholder="นามสกุล"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-12">
+                  <div className="mb-3">
+                    <label className="form-label">หน่วยงาน</label>
+                    <input
+                      {...register("department")}
+                      type="text"
+                      className="form-control"
+                      placeholder="หน่วยงาน"
+                      required
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Email</label>
+                    <input
+                      {...register("email")}
+                      type="email"
+                      className="form-control"
+                      placeholder="email"
+                      required
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">เบอร์โทร</label>
+                    <input
+                      id="inputTel"
+                      type="tel"
+                      className="form-control"
+                      placeholder="เบอร์โทร"
+                      maxLength="10"
+                      pattern="[0]{1}[0-9]{9}"
+                      required
+                      {...register("tel")}
+                    />
+                  </div>
+                  <div className="mb-3 d-flex">
+                    <label className="form-label me-3" htmlFor="prefix">
+                      รับประทานอาหาร
+                    </label>
+                    <div className="form-check me-3">
+                      <input
+                        {...register("mealType")}
+                        className="form-check-input"
+                        type="radio"
+                        value="ปกติ"
+                      />
+                      <label
+                        className="form-check-label"
+                        htmlFor="flexRadioDefault1"
+                      >
+                        ปกติ
+                      </label>
+                    </div>
+                    <div className="form-check me-3">
+                      <input
+                        {...register("mealType")}
+                        className="form-check-input"
+                        type="radio"
+                        value="อิสลาม"
+                      />
+                      <label className="form-check-label">อิสลาม</label>
+                    </div>
+                    <div className="form-check">
+                      <input
+                        {...register("mealType")}
+                        className="form-check-input"
+                        type="radio"
+                        value="มังสวิรัติ"
+                      />
+                      <label className="form-check-label">มังสวิรัติ</label>
+                    </div>
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">
+                      ที่อยู่ (สำหรับออกใบเสร็จ)
+                    </label>
+                    <textarea
+                      {...register("billAdress")}
+                      type="text"
+                      className="form-control"
+                      placeholder="ที่อยู่ (สำหรับออกใบเสร็จ)"
+                      required
+                    />
+                  </div>
+                  <div className="row">
+                    <div className="col-6">
+                      <div className="mb-3">
+                        <label htmlFor="payDate" className="form-label">
+                          วันที่/เวลา ชำระค่าลงทะเบียน
+                        </label>
+                        <input
+                          {...register("payDate")}
+                          className="form-control"
+                          type="datetime-local"
+                          id="payDate"
+                        />
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <div className="mb-3">
+                        <label className="form-label">สถานะการชำระเงิน</label>
+                        <select
+                          {...register("payStatus")}
+                          className="form-select"
+                          aria-label="payStatus"
+                        >
+                          <option Value="รอการยืนยัน">รอการยืนยัน</option>
+                          <option value="ชำระแล้ว">ชำระแล้ว</option>
+                          <option value="ไม่ต้องชำระ">ไม่ต้องชำระ</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <div className="mb-3">
+                      {fileImg && firstReceiptName !== "" && (
+                        <div className="text-center mb-2">
+                          <img
+                            className="w-50"
+                            src={fileImg}
+                            alt="fileImg"
+                            height="500"
+                          />
+                        </div>
+                      )}
+                      <label htmlFor="slip" className="form-label w-100">
+                        {errors.fileImg ? (
+                          <div className="alert alert-danger ">
+                            {errors.fileImg.message}
+                          </div>
+                        ) : (
+                          receiptName
+                        )}
+                      </label>
+                      {firstReceiptName !== "" && (
+                        <>
+                          <input
+                            {...register("fileImg")}
+                            onChange={handleChange}
+                            type="file"
+                            accept="image/*"
+                            className="form-control"
+                          />
+                          <div className="form-text">
+                            ใบเสร็จชำระค่าลงทะเบียน ( .jpg/.jpeg/.png )
+                          </div>
+                        </>
+                      )}
+                    </div>
+                    <button type="submit" className="btn btn-success">
+                      แก้ไขรายชื่อสมาชิก
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

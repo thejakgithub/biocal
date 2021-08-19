@@ -5,14 +5,24 @@
 }
 
 @media screen and (max-width: 768px) and (min-width: 481px) {
-
+    .wrapper-userproject{
+        height: 49rem;
+    }
 }
 
 @media screen and (max-width: 1279px) and (min-width: 769px) {
- 
+    .wrapper-userproject{
+        height: 71rem;
+    }
 }
 
 @media screen and (min-width: 1280px) {
+    .wrapper-userproject{
+        height: 49rem;
+    }
+}
+
+@media screen and (min-width: 1367px) {
     .wrapper-userproject{
         height: 30rem;
     }

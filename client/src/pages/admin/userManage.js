@@ -134,15 +134,13 @@ export default function UserManage() {
 
   return (
     <>
-      <div className="d-flex flex-column w-100 ">
-        <Table
-          columns={columns}
-          data={data}
-          title="รายชื่อสมาชิก"
-          add={false}
-          size={5}
-        />
-      </div>
+      <Table
+        columns={columns}
+        data={data}
+        title="รายชื่อสมาชิก"
+        add={false}
+        size={5}
+      />
     </>
   );
 }

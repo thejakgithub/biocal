@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import HeaderSidebar from "../../components/HeaderSidebar";
 import CalendarEvent from "../../components/CalendarEvent";
 import CountDashboard from "../../components/CountDashboard";
 import Axios from "axios";
 import base_url from "../../config/base_url";
+import '../../styles/styles.pages/dashboard.css'
 
 export default function Dashboard() {
   const [countProject, setCountProject] = useState(0);
@@ -32,18 +32,17 @@ export default function Dashboard() {
 
   return (
     <>
-      <div className="flex-column w-100 ">
-        <HeaderSidebar />
-        <div className="container  d-flex  mt-3  ">
-          <div className="ms-1 me-3 ">
+        <div className=" container d-md-flex  mt-3 ">
+          <div className="me-md-4">
             <CountDashboard title="โครงการ/กิจกรรม" count={countProject} />
             <CountDashboard title="ข่าว/ประชาสัมพันธ์" count={countNews} />
             <CountDashboard title="บทความวิชาการ/วิจัย" count={countArticle} />
             <CountDashboard title="รายชื่อสมาชิก" count={countUser} />
             <CountDashboard title="ชำระเงินค่าลงทะเบียน" count={countPayment} />
           </div>
+        
           <CalendarEvent />
-        </div>
+    
       </div>
     </>
   );

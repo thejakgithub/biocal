@@ -92,83 +92,81 @@ export default function EditNews() {
 
   return (
     <>
-      <div className="flex-column  w-100">
-        <header className="bg-success text-white header-sidebar justify-content-between ">
-          <h4 className="mx-3">แก้ไขข่าว/ประชาสัมพันธ์</h4>
-        </header>
-        <div className="container d-flex justify-content-center mt-5">
-          <div className="card " style={{ width: 500 }}>
-            <div className="card-header bg-success fs-5  text-white">
-              แก้ไขข่าว/ประชาสัมพันธ์
-            </div>
-            <div className="card-body">
-              <form onSubmit={updateNews} encType="multipart/form-data">
-                {success && (
-                  <Alert variant="success">
-                    แก้ไขข่าว/ประชาสัมพันธ์ เรียบร้อยแล้ว
-                  </Alert>
-                )}
-                {error && (
-                  <Alert variant="danger">รองรับไฟล์ .pdf เท่านั้น !</Alert>
-                )}
-                <div>
-                  <div className="mb-3">
-                    <label htmlFor="topic_news" className="form-label">
-                      ข่าวประชาสัมพันธ์
-                    </label>
-                    <input
-                      onChange={onTextChange}
-                      type="text"
-                      className="form-control"
-                      name="topicNews"
-                      placeholder="หัวข้อข่าวประชาสัมพันธ์"
-                      value={topicNews}
-                      required
-                      onClick={onTextClick}
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label htmlFor="date" className="form-label">
-                      วันที่
-                    </label>
-                    <input
-                      onChange={onDateChange}
-                      type="date"
-                      className="form-control"
-                      name="date"
-                      value={date}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="file" className="form-label">
-                      <Link
-                        to={`/file/news/${fileName}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {fileName}
-                      </Link>
-                    </label>
-                    <input
-                      type="file"
-                      className="form-control"
-                      name="file"
-                      onChange={fileChange}
-                    />
-                    <div className="form-text">
-                      เนื้อหาข่าวประชาสัมพันธ์ ( .pdf )
-                    </div>
-                  </div>
-                  <button
-                    type="submit"
-                    className="btn btn-success"
-                    style={{ width: 90 }}
-                  >
-                    แก้ไข
-                  </button>
+      <header className="bg-success text-white header-sidebar justify-content-between ">
+        <h4 className="mx-3">แก้ไขข่าว/ประชาสัมพันธ์</h4>
+      </header>
+      <div className="container d-flex justify-content-center mt-5">
+        <div className="card " style={{ width: 500 }}>
+          <div className="card-header bg-success fs-5  text-white">
+            แก้ไขข่าว/ประชาสัมพันธ์
+          </div>
+          <div className="card-body">
+            <form onSubmit={updateNews} encType="multipart/form-data">
+              {success && (
+                <Alert variant="success">
+                  แก้ไขข่าว/ประชาสัมพันธ์ เรียบร้อยแล้ว
+                </Alert>
+              )}
+              {error && (
+                <Alert variant="danger">รองรับไฟล์ .pdf เท่านั้น !</Alert>
+              )}
+              <div>
+                <div className="mb-3">
+                  <label htmlFor="topic_news" className="form-label">
+                    ข่าวประชาสัมพันธ์
+                  </label>
+                  <input
+                    onChange={onTextChange}
+                    type="text"
+                    className="form-control"
+                    name="topicNews"
+                    placeholder="หัวข้อข่าวประชาสัมพันธ์"
+                    value={topicNews}
+                    required
+                    onClick={onTextClick}
+                  />
                 </div>
-              </form>
-            </div>
+                <div className="mb-4">
+                  <label htmlFor="date" className="form-label">
+                    วันที่
+                  </label>
+                  <input
+                    onChange={onDateChange}
+                    type="date"
+                    className="form-control"
+                    name="date"
+                    value={date}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="file" className="form-label">
+                    <Link
+                      to={`/file/news/${fileName}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {fileName}
+                    </Link>
+                  </label>
+                  <input
+                    type="file"
+                    className="form-control"
+                    name="file"
+                    onChange={fileChange}
+                  />
+                  <div className="form-text">
+                    เนื้อหาข่าวประชาสัมพันธ์ ( .pdf )
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  className="btn btn-success"
+                  style={{ width: 90 }}
+                >
+                  แก้ไข
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

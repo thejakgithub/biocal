@@ -102,18 +102,16 @@ export default function ArticleManage() {
     );
   });
 
-  const data = useMemo(() => [...articleList],[articleList]);
+  const data = useMemo(() => [...articleList], [articleList]);
 
   return (
-    <div className="d-flex flex-column w-100 ">
-      <Table
-        columns={columns}
-        data={data}
-        title="จัดการบทความวิชาการ/วิจัย"
-        routeAdd="/admin/articleManage/addArticle"
-        add={true}
-        size={5}
-      />
-    </div>
+    <Table
+      columns={columns}
+      data={data}
+      title="จัดการบทความวิชาการ/วิจัย"
+      routeAdd="/admin/articleManage/addArticle"
+      add={true}
+      size={5}
+    />
   );
 }
