@@ -64,10 +64,9 @@ export default function Content() {
         </div>
         <iframe
           title="calendar"
+          className="calendar-content"
           src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FBangkok&src=c3U5MHJjdm1yNWw0MXZ2cnVkYnJzMWYydHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%239E69AF&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showNav=1&showTitle=1"
-          height="247px"
           width="100%"
-
           frameBorder={0}
         ></iframe>
       </div>

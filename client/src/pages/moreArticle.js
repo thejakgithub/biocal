@@ -60,7 +60,7 @@ export default function MoreArticle() {
   const data = useMemo(() => [...articleList], [articleList]);
 
   return (
-    <div className="wrapper-talbe">
+    <div className="container wrapper-table">
       <Table
         title="บทความวิชาการ/วิจัย"
         columns={columns}

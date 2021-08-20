@@ -10,6 +10,7 @@ body {
     height: 100%; 
     min-height: 100vh;
     min-height: -webkit-fill-available;
+    font-size: calc(69% + 0.8vmin);
 }
 
 a {
@@ -18,6 +19,7 @@ a {
 }
 
 * {
+  font-size: 1rem;
   box-sizing: border-box;
 }
 
@@ -44,6 +46,35 @@ textarea{
 }
 .btn-add{
   width: 4.3rem ;
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) and (orientation:portrait) {
+  
+}
+
+@media screen and (max-width: 1279px) and (min-width: 769px) and (orientation:portrait) {
+  
+}
+
+@media screen and (min-width: 1280px)  {
+  .wrapper-more-footer{
+    margin-top: 7.1rem;
+  }
+}
+
+
+@media screen and (max-width: 1366px) {
+  .wrapper-more-footer{
+    margin-top: 2.57rem;
+  }
+
 }
 
 

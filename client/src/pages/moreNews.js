@@ -62,7 +62,7 @@ export default function MoreNews() {
   const data = useMemo(() => [...newsList], [newsList]);
 
   return (
-    <div className="wrapper-table">
+    <div className="wrapper-table container">
       <Table
         title="ข่าว/ประชาสัมพันธ์"
         columns={columns}

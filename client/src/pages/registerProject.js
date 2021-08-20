@@ -564,7 +564,7 @@ export default function RegisterProject() {
                 <div className="col-md-6 col-sm-12">
                   <div className="mb-3">
                     <label className="form-label w-100">กำหนดการ</label>
-                    <label className="form-control">
+                    <label className="form-control cut-text">
                       <a
                         href={`/file/projects/${projectSchedule}`}
                         target="_blank"
@@ -579,7 +579,7 @@ export default function RegisterProject() {
                 <div className="col-md-6 col-sm-12">
                   <div className="mb-3 ">
                     <label className="form-label">แบบตอบรับ</label>
-                    <label className="form-control">
+                    <label className="form-control cut-text">
                       <a href={`/file/projects/${projectReply}`}>
                         {projectReply}
                       </a>
@@ -591,7 +591,7 @@ export default function RegisterProject() {
                     <label className="form-label">
                       รายละเอียดโครงการ/กิจกรรม
                     </label>
-                    <label className="form-control">
+                    <label className="form-control cut-text">
                       <a
                         href={`/file/projects/${projectDes}`}
                         target="_blank"

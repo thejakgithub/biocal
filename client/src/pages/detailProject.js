@@ -55,7 +55,7 @@ export default function DetailProject() {
   return (
     <>
       <div className="container d-flex justify-content-center ">
-        <div className="card my-4" style={{ width: 700 }}>
+        <div className="card my-4" >
           <div className="card-header bg-success fs-5 text-center  text-white">
             {projectName}
           </div>
@@ -117,7 +117,7 @@ export default function DetailProject() {
                 <div className="col-md-6 col-sm-12">
                   <div className="mb-3">
                     <label className="form-label w-100">กำหนดการ</label>
-                    <label className="form-control">
+                    <label className="form-control cut-text  ">
                       <a
                         href={`/file/project/${projectSchedule}`}
                         target="_blank"
@@ -130,7 +130,7 @@ export default function DetailProject() {
                 
                 <div className="mb-3 ">
                   <label className="form-label">แบบตอบรับ</label>
-                  <label className="form-control">
+                  <label className="form-control cut-text ">
                     <a href={`/file/project/${projectReply}`}>{projectReply}</a>
                   </label>
                 </div>
@@ -138,7 +138,7 @@ export default function DetailProject() {
                   <label className="form-label">
                     รายละเอียดโครงการ/กิจกรรม
                   </label>
-                  <label className="form-control">
+                  <label className="form-control cut-text ">
                     <a
                       href={`/file/project/${projectDes}`}
                       target="_blank"

@@ -85,7 +85,9 @@ function App() {
           <Header />
           <Nav />
           <MoreNews />
+          <div className="wrapper-more-footer">
           <Footer />
+          </div>
         </Route>
         <Route path="/moreArticle">
           <Header />
@@ -109,7 +111,9 @@ function App() {
           <Header />
           <Nav />
           <UserProject />
+          <div className="wrapper-userproject-footer">
           <Footer/> 
+          </div>
         </Route>
         <Route path="/admin">
           <Admin />

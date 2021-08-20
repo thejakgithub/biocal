@@ -54,10 +54,8 @@ export default function NewsManage() {
               return val.newsID !== id;
             })
           );
-          alert("Delete Successfully");
-        } else {
-          alert("News cannot delete !");
-        }
+          alert("ลบข่าว/ประชาสัมพันธ์ เรียบร้อยแล้ว");
+        } 
       })
       .catch((err) => {
         if (err) alert(err);
@@ -97,7 +95,7 @@ export default function NewsManage() {
         <i
           className="fas fa-trash"
           onClick={() => {
-            if (window.confirm("Delete the News ?")) {
+            if (window.confirm("ต้องการลบข่าว/ประชาสัมพันธ์นี้หรือไม่ ?")) {
               onDeleteNews(news.newsID);
             }
           }}

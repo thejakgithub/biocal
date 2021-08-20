@@ -51,8 +51,8 @@ export default function Table({
           </div>
           </div>
       ) : (
-        <header className="bg-success text-white header-sidebar justify-content-between mb-3 ">
-          <h4 className="ms-3 mt-1">{title}</h4>
+        <header className="bg-success   text-white  d-md-flex header-sidebar-manage d-block justify-content-between mb-3 ">
+          <h4 className="ms-md-3 mt-1  ">{title}</h4>
           <div className="d-flex me-3">
             <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
             {add && (
@@ -149,7 +149,7 @@ export default function Table({
                 const page = e.target.value ? Number(e.target.value) - 1 : 0;
                 gotoPage(page);
               }}
-              style={{ width: "100px" }}
+              style={{ width: "4rem" }}
             />
           </span>
         </div>

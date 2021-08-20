@@ -70,7 +70,7 @@ export default function Admin() {
                     />
                     <span className="fs-4  ms-2 ">B</span>
                     <span className="fs-4 d-none d-sm-inline ">
-                      <span>IOCAL</span> 
+                      IOCAL 
                     </span>
                   </Link>
                   <ul

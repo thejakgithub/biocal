@@ -63,7 +63,7 @@ export default function UserProject() {
 
   return (
     <>
-      <div className="wrapper-userproject">
+      <div className="wrapper-userproject container">
         <Table
           title={`รายชื่อสมาชิก ${projectName}`}
           columns={columns}

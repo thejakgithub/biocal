@@ -81,13 +81,13 @@ export default function MoreProject() {
   const data = useMemo(() => [...projectList], [projectList]);
 
   return (
-    <div className="wrapper-table">
+    <div className="wrapper-userproject container">
       <Table
         title="โครงการ/กิจกรรม"
         columns={columns}
         data={data}
         more={true}
-        size={7}
+        size={5}
       />
     </div>
   );
