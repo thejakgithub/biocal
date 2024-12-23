@@ -25,7 +25,7 @@ app.listen(port, () => {
 });
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://biocal.netlify.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -49,20 +49,18 @@ app.use(
   })
 );
 
-app.use("/articleContent" ,articleContent);
-app.use("/newsContent" ,newsContent);
-app.use("/projectContent" ,projectContent);
-app.use("/login" ,login);
-app.use("/logout" ,logout);
-app.use("/articles" ,articles);
-app.use("/news" ,news);
-app.use("/projects" ,projects);
-app.use("/userproject" ,userproject);
-app.use("/payment" ,payment);
-app.use("/countProject" ,countProject);
-app.use("/countNews" ,countNews);
-app.use("/countArticle" ,countArticle);
-app.use("/countUser" ,countUser);
-app.use("/countPayment" ,countPayment);
-
-
+app.use("/articleContent", articleContent);
+app.use("/newsContent", newsContent);
+app.use("/projectContent", projectContent);
+app.use("/login", login);
+app.use("/logout", logout);
+app.use("/articles", articles);
+app.use("/news", news);
+app.use("/projects", projects);
+app.use("/userproject", userproject);
+app.use("/payment", payment);
+app.use("/countProject", countProject);
+app.use("/countNews", countNews);
+app.use("/countArticle", countArticle);
+app.use("/countUser", countUser);
+app.use("/countPayment", countPayment);
